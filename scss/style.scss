@@ -81,9 +81,27 @@ body {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
+  cursor: default;
+  transition: opacity .5s, top .3s;
+
+  &.is-active {
+    opacity: 1;
+    cursor: unset;
+    top: 50%;
+  }
+
+  &.is-loading {
+    .form__button--text {
+        display: none;
+    }
+    .form__button--img {
+        display: block;
+    }
+  }
 
   &__heading {
     font-size: 21px;
@@ -145,6 +163,20 @@ body {
     font-size: 34px;
     cursor: pointer;
     transition: opacity 0.3s;
+
+    &--img {
+        display: none;
+        animation: rotate 2s infinite linear;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 
     &:hover {
       opacity: 0.9;
