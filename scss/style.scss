@@ -142,6 +142,8 @@ body {
     font-size: 28px;
     letter-spacing: -1px;
     text-align: center;
+    color: #2C2C2C;
+    font-weight: 500;
 
     @media (max-width: 768px) {
       width: 95vw;
@@ -163,10 +165,17 @@ body {
     font-size: 34px;
     cursor: pointer;
     transition: opacity 0.3s;
+    font-weight: 500;
 
     &--img {
         display: none;
         animation: rotate 2s infinite linear;
+    }
+
+    &--text {
+        line-height: 1;
+        margin-top: -3px;
+        letter-spacing: -2px;
     }
 
     @keyframes rotate {
